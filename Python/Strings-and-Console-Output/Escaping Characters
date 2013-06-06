@@ -1,1 +1,11 @@
-See here :- http://www.codecademy.com/forum_questions/513fba708b29b0b11e001a74
+Link :- http://www.codecademy.com/forum_questions/513fba708b29b0b11e001a74
+
+Question by Vítor Mussa , 
+
+> "What if I wanted the \ character to actually be part of the string?"
+
+Answerby Alex J , 
+
+> "In order to insert a literal backslash into the string, escape it with a second backslash:
+
+    print "\"back \\ slash\""         #==> "back \ slash"
