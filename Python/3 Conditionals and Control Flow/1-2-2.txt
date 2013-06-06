@@ -1,0 +1,22 @@
+link: http://www.codecademy.com/forum_questions/51af3d03ad7e3e86f6002bb3#comment-51b08af79c4e9dac870084a5
+
+You have to use order of operators on each expression. Just to clarify order of operations is the following in programming:
+
+ 1. Parenthesis
+ 2. Exponents
+ 3. Multiplication/Division/Modulus(%) (left to right)
+ 4. Addition/Subtraction (left to right)
+
+So let's look at the first set of expressions.
+
+    20 + -10 * 2
+
+According to order of operations, we should do multiplication first. So, `-10 * 2` is `-20`. Then adding `20`, we end up with `0`.
+
+    10 % 3 % 2
+
+Here we do the modulus expression from left to right. So `10%3` is `1` and `1 % 2` is `1`. So is `0 > 1`, I think not.
+
+For the second set of expressions we have: `(10+17)**2` and `3**6`. So for the first expression, we do parenthesis first which contains `10+17` so then we have `27**2`. `**` is exponentiation so 27 squared is `729`. Now, `3**6` is 3 to the 6th power or `3*3*3*3*3*3` which is also `729`. Are they equal? I think so. 
+
+I'll leave the last 3 as exercises for you but you should be able to do basic algebra before attempting to learn programming.
