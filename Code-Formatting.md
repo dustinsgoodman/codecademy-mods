@@ -28,4 +28,4 @@ You have to put a **blank line before and after** the indented lines.
 Also see [this document][1] and [this instruction page][2].
 
   [1]: http://www.codecademy.com/docs/forum_guidelines#markdown
-  [2]: http://jsbin.com/akewog/1 "
+  [2]: http://jsbin.com/akewog/1 
