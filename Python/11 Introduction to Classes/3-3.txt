@@ -1,0 +1,60 @@
+link: http://www.codecademy.com/forum_questions/5197ac1df8c091089000279d#comment-51e5f334631fe938dd000f7d
+
+Question:
+When creating a class when do I need to use __init__()?
+
+for exercise 3.3 when we create the PartTimeEmployee() class can we just inherit the __init__() from the Employee() class? Or shoud we retype it?
+
+I found that both
+
+    class Employee(object):
+       
+        def __init__(self, employee_name):
+            self.employee_name = employee_name
+    	    
+        def calculate_wage(self, hours):
+            self.hours = hours
+            return hours * 20.00
+    
+    class PartTimeEmployee(Employee):
+         
+        def calculate_wage(self,hours):
+            self.hours = hours
+            return hours * 12.00
+
+and
+
+    class Employee(object):
+       
+        def __init__(self, employee_name):
+            self.employee_name = employee_name
+    	    
+        def calculate_wage(self, hours):
+            self.hours = hours
+            return hours * 20.00
+    
+    class PartTimeEmployee(Employee):
+        def __init__(self,employee_name):
+            self.employee_name = employee_name
+        
+        def calculate_wage(self,hours):
+            self.hours = hours
+            return hours * 12.00
+
+Passed and I'm unsure if there is a best practice here?
+
+Answer:
+The best practice in Python is to omit the `__init__()` if it is identical to the `super` classes `__init__()`. However, if they are nearly identical with the exception of additional arguments, it is better to use the super constructor method. In the instance of the `PartTimeEmployee`, its `__init__()` method would be:
+
+    class PartTimeEmployee(Employee):
+         def __init__(self, employee_name):
+             super(PartTimeEmployee, self).__init__(employee_name)
+
+As you can see, this is not the prettiest code of all time. Hence, it is only necessary to use the super method when you add parameters. For instance, if we added a instance variable `wage` which is the `PartTimeEmployee`'s pay per hour, we could write:
+
+    class PartTimeEmployee(Employee):
+         def __init__(self, employee_name, wage):
+             super(PartTimeEmployee, self).__init__(employee_name)
+             self.wage = wage
+
+Hence, if we make a critical change to the `Employee` class that should be carried over to the `PartTimeEmployee` class then we only need to make the change once. Hope this clarifies.
